@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import InputForm from "../forms/InputFloatingForm";
 import { UpdateContent } from "../../api/apiContent";
 import { getThumbnail } from "../../api";
-/* eslint-disable react/prop-types */
+
 const ModalEditContent = ({ content, onClose }) => {
     const [show, setShow] = useState(false);
     const [data, setData] = useState(content);

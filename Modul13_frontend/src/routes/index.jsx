@@ -4,6 +4,7 @@ import UserLayout from "../layout/UserLayout";
 import LoginPage from "../pages/auth/LoginPage";
 import RegisterPage from "../pages/auth/RegisterPage";
 import DashboardPage from "../pages/DashboardPage";
+import Review from "../pages/Review";
 import ContentPage from "../pages/ContentPage";
 import ProtectedRoutes from "./ProtectedRoute";
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
                 path: "/user/content",
                 element: <ContentPage />,
             },
+            {
+                path: "/user/review/:id",
+                element: <Review />,
+            }
         ],
     },
 ]);

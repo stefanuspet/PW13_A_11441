@@ -15,4 +15,19 @@ const SignIn = async (data) => {
         throw error.response.data;
     }
 };
-export { SignUp, SignIn };
+
+// get user by id
+const GetUserById = async (id) => {
+    try {
+        const response = await useAxios.get(`/review/user`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+            },
+        });
+        return response.data.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+export { SignUp, SignIn, GetUserById };

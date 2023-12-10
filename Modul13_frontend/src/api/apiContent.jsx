@@ -73,9 +73,8 @@ export const UpdateContent = async (values) => {
 };
 // Menghaspu content
 export const DeleteContent = async (id) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
     try {
-        const response = await useAxios.delete(`/contents/${id}`, {
+        const response = await useAxios.delete(`/review/${id}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${sessionStorage.getItem("token")}`,

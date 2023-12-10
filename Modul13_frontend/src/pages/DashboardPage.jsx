@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
-import { Alert, Col, Container, Row, Spinner, Stack } from "react-bootstrap";
+import { Alert, Col, Container, Row, Spinner, Stack, Button } from "react-bootstrap";
 import { GetAllContents } from "../api/apiContent";
 import { getThumbnail } from "../api";
+import { useNavigate } from "react-router-dom";
 const DashboardPage = () => {
     const [contents, setContents] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleReview = (id) => {
+        navigate(`/user/review/${id}`);
+    }
     useEffect(() => {
         setIsLoading(true);
         GetAllContents()
@@ -52,6 +58,9 @@ const DashboardPage = () => {
                                         {content.title}
                                     </h5>
                                     <p className="card-text">{content.description}</p>
+                                    <Button variant="primary" onClick={() => handleReview(content.id)} style={{ width: "100%" }}>
+                                        Review
+                                    </Button>
                                 </div>
                             </div>
                         </Col>
